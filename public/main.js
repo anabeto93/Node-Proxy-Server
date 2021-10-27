@@ -7,7 +7,8 @@ const fetchWeather = async (city) => {
   const url = `/api?q=${city}`
 
   const res = await fetch(url)
-  const data = await res.json()
+  const apiData = await res.json()
+  const data = apiData.data;
 
   if (data.cod === '404') {
     alert('City not found')
@@ -53,4 +54,4 @@ weatherForm.addEventListener('submit', (e) => {
 })
 
 // Initial fetch
-fetchWeather('Miami')
+fetchWeather('Accra')
